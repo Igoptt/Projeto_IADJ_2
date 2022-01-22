@@ -174,8 +174,12 @@ namespace Assets.TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Soldiers
 
         public void Died()
         {
-            if(HasFlag)
+            if (HasFlag)
+            {
                 GetComponentInChildren<FlagComponent>().Drop();
+                HasFlag = false;
+            }
+                
 
             transform.position = _myRespawner.transform.position;
 
@@ -186,7 +190,7 @@ namespace Assets.TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Soldiers
         {
             while (seconds > 0)
             {
-                _mySB.Stop();
+                transform.position = _myRespawner.transform.position;
                 seconds -= Time.deltaTime;
                 yield return null;
             }

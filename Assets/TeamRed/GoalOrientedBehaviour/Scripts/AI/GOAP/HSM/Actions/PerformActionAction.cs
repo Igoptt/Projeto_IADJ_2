@@ -47,7 +47,7 @@ namespace Assets.TeamRed.GoalOrientedBehaviour.Scripts.AI.GOAP.HSM.Actions
 
                 IGoapAction nextAction = null;
                 if (currentActions.Count > 0)
-                    nextAction = currentActions.Dequeue();
+                    nextAction = currentActions.Peek();
 
                 _dataProvider.CurrentActionFinished(currAction, nextAction); // todo
             }
