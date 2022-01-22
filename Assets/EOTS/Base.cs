@@ -7,6 +7,7 @@ namespace Assets.EOTS
 {
     public class Base : MonoBehaviour
     {
+        //teste
         public List<ISoldier> MemberOfTeamBlue;
         public List<ISoldier> MemberOfTeamRed;
 
