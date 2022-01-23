@@ -5,18 +5,16 @@ using Assets.EOTS;
 using Assets.General_Scripts;
 using Assets.Scripts.SteeringBehaviours.Basics;
 using Assets.TeamBlue.GoalOrientedBehaviour.Scripts.AI.GOAP;
-using Assets.TeamRed.GoalOrientedBehaviour.Scripts.GameData.Soldiers;
-using Assets.TeamRed.Pathfinding;
-using Assets.TeamRed.Pathfinding.Scripts.AStar;
+using Assets.TeamBlue.Pathfinding;
+using Assets.TeamBlue.Pathfinding.Scripts.AStar;
 using UnityEngine;
 
-namespace Assets.TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Soldiers
+namespace TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Soldiers
 {
     public class Soldier : MonoBehaviour, IGoap, ISoldier
     {
         public bool DroppedFlag;
         public bool HasFlag { get; set; }
-
         public Transform MyTransform { get; set; }
         
         private PathfindingUnit _pathfinding;
@@ -56,7 +54,7 @@ namespace Assets.TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Soldiers
             _mySB = GetComponent<SteeringBasics>();
         }
 
-
+        
 
         /// <summary>
         /// Key-Value data that will feed the GOAP actions and system while planning.
@@ -66,6 +64,8 @@ namespace Assets.TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Soldiers
         {
             var worldData = new HashSet<KeyValuePair<string, object>>
             {
+                new KeyValuePair<string, object>("hasFlag", HasFlag),
+                new KeyValuePair<string, object>("scored", DroppedFlag),
             };
 
             return worldData;
@@ -81,7 +81,9 @@ namespace Assets.TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Soldiers
         {
             var goal = new HashSet<KeyValuePair<string, object>>
             {
-                new KeyValuePair<string, object>("attacked", true),
+                //new KeyValuePair<string, object>("hasFlag",true),
+                new KeyValuePair<string, object>("scored", true),
+                //new KeyValuePair<string, object>("attacked", true),
             };
 
             return goal;
@@ -198,6 +200,10 @@ namespace Assets.TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Soldiers
 
         public void Guard()
         {
+            if (HasFlag)
+            {
+                GetComponent<FlagComponent>().Drop();
+            }
             StartCoroutine(StartGuard());
         }
 

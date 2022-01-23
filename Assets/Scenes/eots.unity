@@ -8702,7 +8702,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1749356892}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: -0, y: 1, z: 0.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1827287699}
@@ -9279,6 +9279,8 @@ GameObject:
   - component: {fileID: 1827287708}
   - component: {fileID: 1827287700}
   - component: {fileID: 1827287702}
+  - component: {fileID: 1827287704}
+  - component: {fileID: 1827287701}
   m_Layer: 0
   m_Name: BlueSoldier
   m_TagString: Untagged
@@ -9294,7 +9296,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1827287698}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.9, y: 0, z: 48.84}
+  m_LocalPosition: {x: -3.9, y: 0, z: 48.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1749356893}
@@ -9310,10 +9312,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1827287698}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9a07630984c23e48a79079359aca64c, type: 3}
+  m_Script: {fileID: 11500000, guid: d86f6380a58610346b43814ab58c4245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentState: 
+--- !u!114 &1827287701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827287698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61105d0c62b604e4490611b3a256102c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &1827287702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9346,6 +9362,20 @@ MonoBehaviour:
   DroppedFlag: 0
   _myTeam: 0
   _invulnerable: 0
+--- !u!114 &1827287704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827287698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940bcd3d8fb63e641a3f3c4623d25091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &1827287708
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using Assets.EOTS;
 using Assets.TeamBlue.GoalOrientedBehaviour.Scripts.AI.GOAP;
-using Assets.TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Soldiers;
+using TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Soldiers;
 using UnityEngine;
 
 namespace Assets.TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Actions
@@ -52,7 +52,8 @@ namespace Assets.TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Actions
 
         public override bool CheckProceduralPrecondition(GameObject agent)
         {
-            if (Utils.GetClosest(FindObjectsOfType<Base>().Where(b => b.MyTeam == _soldier.MyTeam), transform, out _droppingBase))
+            if (Utils.GetClosest(FindObjectsOfType<Base>().Where(b => b.MyTeam == _soldier.MyTeam), transform, out _droppingBase) && _soldier.Invulnerable == false)
+            //if (Utils.GetClosest(FindObjectsOfType<Base>(), transform, out _droppingBase) && _soldier.Invulnerable == false)
             {
                 Target = _droppingBase.gameObject;
                 return true;
