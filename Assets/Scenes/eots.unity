@@ -140,6 +140,9 @@ GameObject:
   - component: {fileID: 33454190}
   - component: {fileID: 33454185}
   - component: {fileID: 33454187}
+  - component: {fileID: 33454195}
+  - component: {fileID: 33454189}
+  - component: {fileID: 33454186}
   m_Layer: 0
   m_Name: BlueSoldier
   m_TagString: Untagged
@@ -160,7 +163,7 @@ Transform:
   m_Children:
   - {fileID: 336208663}
   m_Father: {fileID: 996270366}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &33454185
 MonoBehaviour:
@@ -175,6 +178,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentState: 
+--- !u!114 &33454186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33454183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &33454187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +224,20 @@ MonoBehaviour:
   DroppedFlag: 0
   _myTeam: 0
   _invulnerable: 0
+--- !u!114 &33454189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33454183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940bcd3d8fb63e641a3f3c4623d25091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &33454190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,6 +320,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &33454195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33454183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61105d0c62b604e4490611b3a256102c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!1 &43690220
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,6 +803,9 @@ GameObject:
   - component: {fileID: 100096394}
   - component: {fileID: 100096389}
   - component: {fileID: 100096391}
+  - component: {fileID: 100096399}
+  - component: {fileID: 100096393}
+  - component: {fileID: 100096390}
   m_Layer: 0
   m_Name: BlueSoldier
   m_TagString: Untagged
@@ -778,7 +826,7 @@ Transform:
   m_Children:
   - {fileID: 1092292486}
   m_Father: {fileID: 996270366}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &100096389
 MonoBehaviour:
@@ -793,6 +841,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentState: 
+--- !u!114 &100096390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100096387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940bcd3d8fb63e641a3f3c4623d25091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &100096391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -825,6 +887,20 @@ MonoBehaviour:
   DroppedFlag: 0
   _myTeam: 0
   _invulnerable: 0
+--- !u!114 &100096393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100096387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61105d0c62b604e4490611b3a256102c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &100096394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -907,6 +983,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &100096399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100096387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!1 &123043684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,7 +1107,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 996270366}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &124511760
 MonoBehaviour:
@@ -2464,6 +2554,9 @@ GameObject:
   - component: {fileID: 451391563}
   - component: {fileID: 451391558}
   - component: {fileID: 451391560}
+  - component: {fileID: 451391568}
+  - component: {fileID: 451391562}
+  - component: {fileID: 451391559}
   m_Layer: 0
   m_Name: BlueSoldier
   m_TagString: Untagged
@@ -2484,7 +2577,7 @@ Transform:
   m_Children:
   - {fileID: 858160645}
   m_Father: {fileID: 996270366}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &451391558
 MonoBehaviour:
@@ -2499,6 +2592,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentState: 
+--- !u!114 &451391559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451391556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &451391560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2531,6 +2638,20 @@ MonoBehaviour:
   DroppedFlag: 0
   _myTeam: 0
   _invulnerable: 0
+--- !u!114 &451391562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451391556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940bcd3d8fb63e641a3f3c4623d25091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &451391563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2613,6 +2734,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &451391568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451391556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61105d0c62b604e4490611b3a256102c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!1 &460929790
 GameObject:
   m_ObjectHideFlags: 0
@@ -2711,6 +2846,9 @@ GameObject:
   - component: {fileID: 488875629}
   - component: {fileID: 488875624}
   - component: {fileID: 488875626}
+  - component: {fileID: 488875634}
+  - component: {fileID: 488875628}
+  - component: {fileID: 488875625}
   m_Layer: 0
   m_Name: BlueSoldier
   m_TagString: Untagged
@@ -2731,7 +2869,7 @@ Transform:
   m_Children:
   - {fileID: 1147535301}
   m_Father: {fileID: 996270366}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &488875624
 MonoBehaviour:
@@ -2746,6 +2884,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentState: 
+--- !u!114 &488875625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488875622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &488875626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2778,6 +2930,20 @@ MonoBehaviour:
   DroppedFlag: 0
   _myTeam: 0
   _invulnerable: 0
+--- !u!114 &488875628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488875622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61105d0c62b604e4490611b3a256102c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &488875629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2860,6 +3026,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &488875634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488875622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940bcd3d8fb63e641a3f3c4623d25091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!1 &498060043
 GameObject:
   m_ObjectHideFlags: 0
@@ -3595,6 +3775,9 @@ GameObject:
   - component: {fileID: 654347792}
   - component: {fileID: 654347787}
   - component: {fileID: 654347789}
+  - component: {fileID: 654347797}
+  - component: {fileID: 654347791}
+  - component: {fileID: 654347788}
   m_Layer: 0
   m_Name: BlueSoldier
   m_TagString: Untagged
@@ -3615,7 +3798,7 @@ Transform:
   m_Children:
   - {fileID: 992083128}
   m_Father: {fileID: 996270366}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &654347787
 MonoBehaviour:
@@ -3630,6 +3813,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentState: 
+--- !u!114 &654347788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654347785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &654347789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3662,6 +3859,20 @@ MonoBehaviour:
   DroppedFlag: 0
   _myTeam: 0
   _invulnerable: 0
+--- !u!114 &654347791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654347785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61105d0c62b604e4490611b3a256102c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &654347792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3744,6 +3955,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &654347797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654347785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940bcd3d8fb63e641a3f3c4623d25091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!1 &675215745
 GameObject:
   m_ObjectHideFlags: 0
@@ -4520,6 +4745,9 @@ GameObject:
   - component: {fileID: 891427904}
   - component: {fileID: 891427899}
   - component: {fileID: 891427901}
+  - component: {fileID: 891427909}
+  - component: {fileID: 891427903}
+  - component: {fileID: 891427900}
   m_Layer: 0
   m_Name: BlueSoldier
   m_TagString: Untagged
@@ -4540,7 +4768,7 @@ Transform:
   m_Children:
   - {fileID: 1185236144}
   m_Father: {fileID: 996270366}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &891427899
 MonoBehaviour:
@@ -4555,6 +4783,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentState: 
+--- !u!114 &891427900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891427897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &891427901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4587,6 +4829,20 @@ MonoBehaviour:
   DroppedFlag: 0
   _myTeam: 0
   _invulnerable: 0
+--- !u!114 &891427903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891427897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61105d0c62b604e4490611b3a256102c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &891427904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4669,6 +4925,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &891427909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891427897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940bcd3d8fb63e641a3f3c4623d25091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!1 &913893920
 GameObject:
   m_ObjectHideFlags: 0
@@ -4962,6 +5232,9 @@ GameObject:
   - component: {fileID: 950568992}
   - component: {fileID: 950568987}
   - component: {fileID: 950568989}
+  - component: {fileID: 950568997}
+  - component: {fileID: 950568991}
+  - component: {fileID: 950568988}
   m_Layer: 0
   m_Name: BlueSoldier
   m_TagString: Untagged
@@ -4982,7 +5255,7 @@ Transform:
   m_Children:
   - {fileID: 2034708539}
   m_Father: {fileID: 996270366}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &950568987
 MonoBehaviour:
@@ -4997,6 +5270,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentState: 
+--- !u!114 &950568988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950568985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61105d0c62b604e4490611b3a256102c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &950568989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5029,6 +5316,20 @@ MonoBehaviour:
   DroppedFlag: 0
   _myTeam: 0
   _invulnerable: 0
+--- !u!114 &950568991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950568985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940bcd3d8fb63e641a3f3c4623d25091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &950568992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5111,6 +5412,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &950568997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950568985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!1 &977196209
 GameObject:
   m_ObjectHideFlags: 0
@@ -5334,6 +5649,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1567290135}
   - {fileID: 124511759}
   - {fileID: 1827287699}
   - {fileID: 33454184}
@@ -6927,6 +7243,9 @@ GameObject:
   - component: {fileID: 1345410152}
   - component: {fileID: 1345410147}
   - component: {fileID: 1345410149}
+  - component: {fileID: 1345410157}
+  - component: {fileID: 1345410151}
+  - component: {fileID: 1345410148}
   m_Layer: 0
   m_Name: BlueSoldier
   m_TagString: Untagged
@@ -6947,7 +7266,7 @@ Transform:
   m_Children:
   - {fileID: 426604373}
   m_Father: {fileID: 996270366}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1345410147
 MonoBehaviour:
@@ -6962,6 +7281,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentState: 
+--- !u!114 &1345410148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345410145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &1345410149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6994,6 +7327,20 @@ MonoBehaviour:
   DroppedFlag: 0
   _myTeam: 0
   _invulnerable: 0
+--- !u!114 &1345410151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345410145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61105d0c62b604e4490611b3a256102c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &1345410152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7076,6 +7423,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &1345410157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345410145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940bcd3d8fb63e641a3f3c4623d25091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!1 &1365556269
 GameObject:
   m_ObjectHideFlags: 0
@@ -8138,6 +8499,54 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!1 &1567290134
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1567290135}
+  - component: {fileID: 1567290136}
+  m_Layer: 0
+  m_Name: TeamManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1567290135
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567290134}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 996270366}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1567290136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567290134}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4cae3ad61484493a7cbb0c0be7ee0ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyArmy: []
+  MapBases: []
+  Flag: {fileID: 0}
+  MyTeam: 0
+  OtherTeam: 0
 --- !u!1 &1579771430
 GameObject:
   m_ObjectHideFlags: 0
@@ -8404,6 +8813,9 @@ GameObject:
   - component: {fileID: 1642748142}
   - component: {fileID: 1642748137}
   - component: {fileID: 1642748139}
+  - component: {fileID: 1642748147}
+  - component: {fileID: 1642748141}
+  - component: {fileID: 1642748138}
   m_Layer: 0
   m_Name: BlueSoldier
   m_TagString: Untagged
@@ -8424,7 +8836,7 @@ Transform:
   m_Children:
   - {fileID: 2100460148}
   m_Father: {fileID: 996270366}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1642748137
 MonoBehaviour:
@@ -8439,6 +8851,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentState: 
+--- !u!114 &1642748138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642748135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940bcd3d8fb63e641a3f3c4623d25091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &1642748139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8471,6 +8897,20 @@ MonoBehaviour:
   DroppedFlag: 0
   _myTeam: 0
   _invulnerable: 0
+--- !u!114 &1642748141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642748135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61105d0c62b604e4490611b3a256102c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &1642748142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8553,6 +8993,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &1642748147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642748135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!1 &1670046216
 GameObject:
   m_ObjectHideFlags: 0
@@ -9032,6 +9486,9 @@ GameObject:
   - component: {fileID: 1794768373}
   - component: {fileID: 1794768368}
   - component: {fileID: 1794768370}
+  - component: {fileID: 1794768378}
+  - component: {fileID: 1794768372}
+  - component: {fileID: 1794768369}
   m_Layer: 0
   m_Name: BlueSoldier
   m_TagString: Untagged
@@ -9052,7 +9509,7 @@ Transform:
   m_Children:
   - {fileID: 1525476371}
   m_Father: {fileID: 996270366}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1794768368
 MonoBehaviour:
@@ -9067,6 +9524,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentState: 
+--- !u!114 &1794768369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794768366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &1794768370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9099,6 +9570,20 @@ MonoBehaviour:
   DroppedFlag: 0
   _myTeam: 0
   _invulnerable: 0
+--- !u!114 &1794768372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794768366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61105d0c62b604e4490611b3a256102c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &1794768373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9181,6 +9666,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &1794768378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794768366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940bcd3d8fb63e641a3f3c4623d25091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!1 &1797854264
 GameObject:
   m_ObjectHideFlags: 0
@@ -9281,6 +9780,7 @@ GameObject:
   - component: {fileID: 1827287702}
   - component: {fileID: 1827287704}
   - component: {fileID: 1827287701}
+  - component: {fileID: 1827287705}
   m_Layer: 0
   m_Name: BlueSoldier
   m_TagString: Untagged
@@ -9301,7 +9801,7 @@ Transform:
   m_Children:
   - {fileID: 1749356893}
   m_Father: {fileID: 996270366}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1827287700
 MonoBehaviour:
@@ -9372,6 +9872,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 940bcd3d8fb63e641a3f3c4623d25091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
+--- !u!114 &1827287705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827287698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Duration: 0
@@ -9475,6 +9989,9 @@ GameObject:
   - component: {fileID: 1849421843}
   - component: {fileID: 1849421838}
   - component: {fileID: 1849421840}
+  - component: {fileID: 1849421848}
+  - component: {fileID: 1849421842}
+  - component: {fileID: 1849421839}
   m_Layer: 0
   m_Name: BlueSoldier
   m_TagString: Untagged
@@ -9495,7 +10012,7 @@ Transform:
   m_Children:
   - {fileID: 2011770318}
   m_Father: {fileID: 996270366}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1849421838
 MonoBehaviour:
@@ -9510,6 +10027,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentState: 
+--- !u!114 &1849421839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849421836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940bcd3d8fb63e641a3f3c4623d25091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &1849421840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9542,6 +10073,20 @@ MonoBehaviour:
   DroppedFlag: 0
   _myTeam: 0
   _invulnerable: 0
+--- !u!114 &1849421842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849421836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61105d0c62b604e4490611b3a256102c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &1849421843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9624,6 +10169,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &1849421848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849421836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!1 &1861338456
 GameObject:
   m_ObjectHideFlags: 0
@@ -9841,6 +10400,9 @@ GameObject:
   - component: {fileID: 1878914178}
   - component: {fileID: 1878914173}
   - component: {fileID: 1878914175}
+  - component: {fileID: 1878914183}
+  - component: {fileID: 1878914177}
+  - component: {fileID: 1878914174}
   m_Layer: 0
   m_Name: BlueSoldier
   m_TagString: Untagged
@@ -9861,7 +10423,7 @@ Transform:
   m_Children:
   - {fileID: 1365556270}
   m_Father: {fileID: 996270366}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1878914173
 MonoBehaviour:
@@ -9876,6 +10438,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentState: 
+--- !u!114 &1878914174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878914171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &1878914175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9908,6 +10484,20 @@ MonoBehaviour:
   DroppedFlag: 0
   _myTeam: 0
   _invulnerable: 0
+--- !u!114 &1878914177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878914171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61105d0c62b604e4490611b3a256102c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &1878914178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9990,6 +10580,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &1878914183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878914171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940bcd3d8fb63e641a3f3c4623d25091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!1 &1896091858
 GameObject:
   m_ObjectHideFlags: 0
@@ -10007,6 +10611,9 @@ GameObject:
   - component: {fileID: 1896091865}
   - component: {fileID: 1896091860}
   - component: {fileID: 1896091862}
+  - component: {fileID: 1896091870}
+  - component: {fileID: 1896091864}
+  - component: {fileID: 1896091861}
   m_Layer: 0
   m_Name: BlueSoldier
   m_TagString: Untagged
@@ -10027,7 +10634,7 @@ Transform:
   m_Children:
   - {fileID: 1208623731}
   m_Father: {fileID: 996270366}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1896091860
 MonoBehaviour:
@@ -10042,6 +10649,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentState: 
+--- !u!114 &1896091861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896091858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &1896091862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10074,6 +10695,20 @@ MonoBehaviour:
   DroppedFlag: 0
   _myTeam: 0
   _invulnerable: 0
+--- !u!114 &1896091864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896091858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61105d0c62b604e4490611b3a256102c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &1896091865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10156,6 +10791,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &1896091870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896091858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940bcd3d8fb63e641a3f3c4623d25091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!1 &1943549381
 GameObject:
   m_ObjectHideFlags: 0
@@ -10938,6 +11587,9 @@ GameObject:
   - component: {fileID: 2049824369}
   - component: {fileID: 2049824364}
   - component: {fileID: 2049824366}
+  - component: {fileID: 2049824374}
+  - component: {fileID: 2049824368}
+  - component: {fileID: 2049824365}
   m_Layer: 0
   m_Name: BlueSoldier
   m_TagString: Untagged
@@ -10958,7 +11610,7 @@ Transform:
   m_Children:
   - {fileID: 440431508}
   m_Father: {fileID: 996270366}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2049824364
 MonoBehaviour:
@@ -10973,6 +11625,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentState: 
+--- !u!114 &2049824365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049824362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &2049824366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11005,6 +11671,20 @@ MonoBehaviour:
   DroppedFlag: 0
   _myTeam: 0
   _invulnerable: 0
+--- !u!114 &2049824368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049824362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61105d0c62b604e4490611b3a256102c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &2049824369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11087,6 +11767,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &2049824374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049824362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940bcd3d8fb63e641a3f3c4623d25091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!1 &2084404934
 GameObject:
   m_ObjectHideFlags: 0

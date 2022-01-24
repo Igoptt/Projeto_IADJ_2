@@ -4,6 +4,7 @@ using System.Linq;
 using Assets.EOTS;
 using Assets.General_Scripts;
 using Assets.Scripts.SteeringBehaviours.Basics;
+using Assets.TeamBlue;
 using Assets.TeamBlue.GoalOrientedBehaviour.Scripts.AI.GOAP;
 using Assets.TeamBlue.Pathfinding;
 using Assets.TeamBlue.Pathfinding.Scripts.AStar;
@@ -18,7 +19,9 @@ namespace TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Soldiers
         public Transform MyTransform { get; set; }
         
         private PathfindingUnit _pathfinding;
-
+        private TeamManager _teamManager;
+        
+        
         public Teams MyTeam
         {
             get => _myTeam;
@@ -52,6 +55,7 @@ namespace TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Soldiers
             _myRespawner = FindObjectsOfType<Respawner>().First(sp => sp.MyTeam == MyTeam);
             MyTransform = transform;
             _mySB = GetComponent<SteeringBasics>();
+            _teamManager = FindObjectOfType<TeamManager>();
         }
 
         
@@ -82,8 +86,11 @@ namespace TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Soldiers
             var goal = new HashSet<KeyValuePair<string, object>>
             {
                 //new KeyValuePair<string, object>("hasFlag",true),
-                new KeyValuePair<string, object>("scored", true),
+                //new KeyValuePair<string, object>("scored", true),
                 //new KeyValuePair<string, object>("attacked", true),
+                new KeyValuePair<string, object>(_teamManager.GetGoal(this),true),
+               //new KeyValuePair<string, object>("captureBaseAction",true),
+                
             };
 
             return goal;
