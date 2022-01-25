@@ -20,7 +20,7 @@ namespace TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Soldiers
         
         private PathfindingUnit _pathfinding;
         private TeamManager _teamManager;
-        
+        private HashSet<KeyValuePair<string, object>> _soldierGoal;
         
         public Teams MyTeam
         {
@@ -56,6 +56,7 @@ namespace TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Soldiers
             MyTransform = transform;
             _mySB = GetComponent<SteeringBasics>();
             _teamManager = FindObjectOfType<TeamManager>();
+            _soldierGoal = new HashSet<KeyValuePair<string, object>>();
         }
 
         
@@ -83,17 +84,21 @@ namespace TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Soldiers
         /// <returns></returns>
         public HashSet<KeyValuePair<string, object>> CreateGoalState()
         {
-            var goal = new HashSet<KeyValuePair<string, object>>
-            {
-                //new KeyValuePair<string, object>("hasFlag",true),
-                //new KeyValuePair<string, object>("scored", true),
-                //new KeyValuePair<string, object>("attacked", true),
-                new KeyValuePair<string, object>(_teamManager.GetGoal(this),true),
-               //new KeyValuePair<string, object>("captureBaseAction",true),
-                
-            };
-
-            return goal;
+            // var goal = new HashSet<KeyValuePair<string, object>>
+            // {
+            //     //new KeyValuePair<string, object>("hasFlag",true),
+            //     new KeyValuePair<string, object>("scored", true),
+            //     //new KeyValuePair<string, object>("attacked", true),
+            //     // new KeyValuePair<string, object>(_teamManager.GetGoal(this),true),
+            //     // new KeyValuePair<string, object>(_teamManager.GetGoal(this),true),
+            //    //new KeyValuePair<string, object>("captureBaseAction",true),
+            //     
+            // };
+            //
+            // return goal;
+            
+            SetGoal();
+            return _soldierGoal;
         }
 
         /// <summary>
@@ -120,11 +125,13 @@ namespace TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Soldiers
         }
 
         /// <summary>
-        /// Função que vai dar o valor á variavel global do goal (depois no goalState so da return da variavel
+        /// Função que vai dar o valor á variavel global do goal (depois no goalState so da return da variavel)
         /// </summary>
         public void SetGoal()
         {
-            
+            _soldierGoal.Clear();
+            _soldierGoal.Add(new KeyValuePair<string, object>(_teamManager.GetGoal(this),true));
+            // _soldierGoal.Add(new KeyValuePair<string, object>("scored",true));
         }
 
         /// <summary>
