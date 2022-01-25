@@ -102,6 +102,7 @@
      <Compile Include="Assets\TeamRed\Pathfinding\Scripts\AStar\Line.cs" />
      <Compile Include="Assets\Scripts\HSM\Concretes\Conditions\Constants.cs" />
      <Compile Include="Assets\TeamBlue\GoalOrientedBehaviour\Scripts\AI\GOAP\Node.cs" />
+     <Compile Include="Assets\TeamBlue\TeamManager.cs" />
      <Compile Include="Assets\EOTS\EOTS_Enums.cs" />
      <Compile Include="Assets\Scripts\SteeringBehaviours\Advanced\WallAvoidance.cs" />
      <Compile Include="Assets\TeamRed\GoalOrientedBehaviour\Scripts\AI\GOAP\HSM\Actions\MoveToAction.cs" />
@@ -166,7 +167,6 @@
      <Compile Include="Assets\TeamRed\GoalOrientedBehaviour\Scripts\AI\GOAP\HSM\Actions\PerformActionAction.cs" />
      <Compile Include="Assets\Scripts\HSM\Concretes\Actions\EvadeExitActions.cs" />
      <Compile Include="Assets\TeamRed\GoalOrientedBehaviour\Scripts\GameData\MyRandom.cs" />
-     <Compile Include="Assets\TeamBlue\TeamManager.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

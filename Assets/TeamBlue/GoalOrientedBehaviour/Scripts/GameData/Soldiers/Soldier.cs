@@ -120,6 +120,14 @@ namespace TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Soldiers
         }
 
         /// <summary>
+        /// Função que vai dar o valor á variavel global do goal (depois no goalState so da return da variavel
+        /// </summary>
+        public void SetGoal()
+        {
+            
+        }
+
+        /// <summary>
         /// Everything is done, we completed our actions for this gool. Hooray! Add code if necessary
         /// </summary>
         public void ActionsFinished()

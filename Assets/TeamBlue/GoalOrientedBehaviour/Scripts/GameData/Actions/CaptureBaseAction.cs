@@ -15,7 +15,7 @@ namespace TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Actions
         
         private Base _captureBase;
         private ISoldier _soldier;
-
+        
         private void Awake()
         {
             _soldier = GetComponent<Soldier>();
