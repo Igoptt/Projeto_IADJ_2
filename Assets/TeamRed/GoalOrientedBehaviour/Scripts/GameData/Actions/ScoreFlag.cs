@@ -1,4 +1,5 @@
-﻿using Assets.EOTS;
+﻿using System.Linq;
+using Assets.EOTS;
 using Assets.TeamRed.GoalOrientedBehaviour.Scripts.AI.GOAP;
 using Assets.TeamRed.GoalOrientedBehaviour.Scripts.GameData.Soldiers;
 using UnityEngine;
@@ -51,7 +52,7 @@ namespace Assets.TeamRed.GoalOrientedBehaviour.Scripts.GameData.Actions
 
         public override bool CheckProceduralPrecondition(GameObject agent)
         {
-            if (Utils.GetClosest(FindObjectsOfType<Base>(), transform, out _droppingBase))
+            if (Utils.GetClosest(FindObjectsOfType<Base>().Where(b => b.MyTeam == _soldier.MyTeam), transform, out _droppingBase))
             {
                 Target = _droppingBase.gameObject;
                 return true;
@@ -70,7 +71,7 @@ namespace Assets.TeamRed.GoalOrientedBehaviour.Scripts.GameData.Actions
             _soldier.HasFlag = false;
             _scored = true; // you have dropped the flag
 
-            //print("scored flag");
+            print("scored flag");
 
             return true;
         }

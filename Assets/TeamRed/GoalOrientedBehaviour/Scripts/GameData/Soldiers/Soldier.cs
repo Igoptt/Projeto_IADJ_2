@@ -6,6 +6,7 @@ using Assets.General_Scripts;
 using Assets.Scripts.SteeringBehaviours.Basics;
 using Assets.TeamRed.GoalOrientedBehaviour.Scripts.AI.GOAP;
 using Assets.TeamRed.Pathfinding;
+using Assets.TeamRed.Pathfinding.Scripts.AStar;
 using UnityEngine;
 
 namespace Assets.TeamRed.GoalOrientedBehaviour.Scripts.GameData.Soldiers
@@ -17,6 +18,8 @@ namespace Assets.TeamRed.GoalOrientedBehaviour.Scripts.GameData.Soldiers
         public bool Invulnerable { get; set; }
         public bool HasFlag { get; set; }
         public Transform MyTransform { get; set; }
+        private EnemyTeamManger _teamManager;
+        private HashSet<KeyValuePair<string, object>> _soldierGoal;
 
         public Teams MyTeam
         {
@@ -24,10 +27,10 @@ namespace Assets.TeamRed.GoalOrientedBehaviour.Scripts.GameData.Soldiers
             set => _myTeam = value;
         }
 
-
+        private PathfindingUnit _pathfinding;
         private GoapAgent _agent;
         private Respawner _myRespawner;
-        private PathfindingUnit _pathfindingUnit;
+        private IPathfindingUnit _pathfindingUnit;
         [SerializeField] private Teams _myTeam;
         private SteeringBasics _mySB;
         private bool _sprintOnCD;
@@ -36,10 +39,14 @@ namespace Assets.TeamRed.GoalOrientedBehaviour.Scripts.GameData.Soldiers
         private void Awake()
         {
             MyTransform = GetComponent<Transform>();
-            _pathfindingUnit = GetComponent<PathfindingUnit>();
-            _agent = GetComponent<GoapAgent>();
+            _pathfinding = GetComponent<PathfindingUnit>();
+            _pathfindingUnit = GetComponent<IPathfindingUnit>();         
             _myRespawner = FindObjectsOfType<Respawner>().First(sp => sp.MyTeam == MyTeam);
             _mySB = GetComponent<SteeringBasics>();
+            _agent = GetComponent<GoapAgent>();
+            _teamManager = FindObjectOfType<EnemyTeamManger>();
+            _soldierGoal = new HashSet<KeyValuePair<string, object>>();
+        
         }
 
 
@@ -52,6 +59,8 @@ namespace Assets.TeamRed.GoalOrientedBehaviour.Scripts.GameData.Soldiers
         {
             var worldData = new HashSet<KeyValuePair<string, object>>
             {
+                new KeyValuePair<string, object>("hasFlag", HasFlag),
+                new KeyValuePair<string, object>("scored", DroppedFlag),
             };
 
             return worldData;
@@ -65,12 +74,15 @@ namespace Assets.TeamRed.GoalOrientedBehaviour.Scripts.GameData.Soldiers
         /// <returns></returns>
         public virtual HashSet<KeyValuePair<string, object>> CreateGoalState()
         {
-            var goal = new HashSet<KeyValuePair<string, object>>
-            {
-                new KeyValuePair<string, object>("scored", true)
-            };
-
-            return goal;
+            SetGoal();
+            return _soldierGoal;
+        }
+        
+        public void SetGoal()
+        {
+            _soldierGoal.Clear();
+            _soldierGoal.Add(new KeyValuePair<string, object>(_teamManager.GetGoal(this),true));
+            // _soldierGoal.Add(new KeyValuePair<string, object>("scored",true));
         }
 
         /// <summary>

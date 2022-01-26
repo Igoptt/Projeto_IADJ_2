@@ -9,6 +9,8 @@ using Assets.TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Actions;
 using TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Actions;
 using TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Soldiers;
 using UnityEngine;
+using UnityEngine.Diagnostics;
+using Utils = Assets.TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Utils;
 
 namespace Assets.TeamBlue
 {
@@ -20,8 +22,9 @@ namespace Assets.TeamBlue
         public Teams MyTeam;
         public Teams OtherTeam;
 
-        public List<ISoldier> EnemyArmy;
+        private List<ISoldier> EnemyArmy;
 
+        private ISoldier _closestEnemy;
 
         private void Awake()
         {
@@ -45,14 +48,17 @@ namespace Assets.TeamBlue
         public string GetGoal(Soldier soldier)
         {
             var goal ="";
+            // var closestEnemy = Utils.GetClosest(EnemyArmy, soldier.MyTransform, out _closestEnemy);
+            
+            
             goal = soldier.HasFlag ? "scored" : "captureBaseAction";
-
+            
 
             // foreach (var bases in MapBases)
             // {
             //     if (bases.name == "NE" && IsBaseOurs(bases))
             //     {
-            //         goal = "score";
+            //         goal = "hasFlag";
             //     }
             // }
             // if (!DoWeHaveOurBases(MyTeam))
