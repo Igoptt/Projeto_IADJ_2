@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\HSM\Concretes\Conditions\NoHidingSpot.cs" />
      <Compile Include="Assets\Scripts\HSM\Concretes\UpdateResult.cs" />
      <Compile Include="Assets\Scripts\HSM\Concretes\Actions\EvadeEntryAction.cs" />
+     <Compile Include="Assets\TeamBlue\GoalOrientedBehaviour\Scripts\GameData\Actions\AttackNearestEnemyAction.cs" />
      <Compile Include="Assets\Scripts\HSM\Concretes\Conditions\HidingSpotNearby.cs" />
      <Compile Include="Assets\EOTS\Base.cs" />
      <Compile Include="Assets\TeamBlue\Pathfinding\Scripts\Grid\PathfindingGrid.cs" />
@@ -175,7 +176,7 @@
      <Compile Include="Assets\TeamRed\GoalOrientedBehaviour\Scripts\AI\GOAP\HSM\Actions\PerformActionAction.cs" />
      <Compile Include="Assets\Scripts\HSM\Concretes\Actions\EvadeExitActions.cs" />
      <Compile Include="Assets\TeamRed\GoalOrientedBehaviour\Scripts\GameData\MyRandom.cs" />
-     <Compile Include="Assets\TeamBlue\GoalOrientedBehaviour\Scripts\GameData\Actions\AttackNearestEnemyAction.cs" />
+     <Compile Include="Assets\TeamBlue\GoalOrientedBehaviour\Scripts\GameData\Actions\SprintAction.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

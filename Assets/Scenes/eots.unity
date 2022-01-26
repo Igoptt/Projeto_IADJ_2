@@ -8279,9 +8279,10 @@ GameObject:
   - component: {fileID: 6134521876668384382}
   - component: {fileID: 6134521876668384381}
   - component: {fileID: 6134521876668384380}
+  - component: {fileID: 291621006}
+  - component: {fileID: 6134521876668384375}
   - component: {fileID: 6134521876668384373}
   - component: {fileID: 6134521876668384374}
-  - component: {fileID: 291621006}
   m_Layer: 0
   m_Name: BlueSoldier (5)
   m_TagString: Untagged
@@ -8333,6 +8334,20 @@ MonoBehaviour:
   Duration: 0
   _cost: 1
   MapBases: []
+--- !u!114 &6134521876668384375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6134521876668384371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &6134521876668384380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8493,8 +8508,9 @@ GameObject:
   - component: {fileID: 6134521876786418189}
   - component: {fileID: 6134521876786418188}
   - component: {fileID: 6134521876786418187}
-  - component: {fileID: 6134521876786418180}
   - component: {fileID: 753856751}
+  - component: {fileID: 6134521876786418182}
+  - component: {fileID: 6134521876786418180}
   - component: {fileID: 6134521876786418181}
   m_Layer: 0
   m_Name: BlueSoldier (8)
@@ -8547,6 +8563,20 @@ MonoBehaviour:
   Duration: 0
   _cost: 1
   MapBases: []
+--- !u!114 &6134521876786418182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6134521876786418178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &6134521876786418187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8818,8 +8848,9 @@ GameObject:
   - component: {fileID: 6134521876803662151}
   - component: {fileID: 6134521876803662150}
   - component: {fileID: 6134521876803662149}
-  - component: {fileID: 6134521876803662174}
   - component: {fileID: 874198633}
+  - component: {fileID: 6134521876803662176}
+  - component: {fileID: 6134521876803662174}
   - component: {fileID: 6134521876803662175}
   m_Layer: 0
   m_Name: BlueSoldier (9)
@@ -8872,6 +8903,20 @@ MonoBehaviour:
   Duration: 0
   _cost: 1
   MapBases: []
+--- !u!114 &6134521876803662176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6134521876803662172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &6134521876818543056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9030,8 +9075,9 @@ GameObject:
   - component: {fileID: 6134521876818543065}
   - component: {fileID: 6134521876818543064}
   - component: {fileID: 6134521876818543063}
-  - component: {fileID: 6134521876818543056}
   - component: {fileID: 617001087}
+  - component: {fileID: 6134521876818543089}
+  - component: {fileID: 6134521876818543056}
   - component: {fileID: 6134521876818543088}
   m_Layer: 0
   m_Name: BlueSoldier (7)
@@ -9070,6 +9116,20 @@ MonoBehaviour:
   Duration: 0
   _cost: 1
   MapBases: []
+--- !u!114 &6134521876818543089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6134521876818543086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &6134521876876103056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9152,8 +9212,9 @@ GameObject:
   - component: {fileID: 6134521876876103086}
   - component: {fileID: 6134521876876103085}
   - component: {fileID: 6134521876876103084}
-  - component: {fileID: 6134521876876103077}
   - component: {fileID: 1054761901}
+  - component: {fileID: 6134521876876103079}
+  - component: {fileID: 6134521876876103077}
   - component: {fileID: 6134521876876103078}
   m_Layer: 0
   m_Name: BlueSoldier (10)
@@ -9206,6 +9267,20 @@ MonoBehaviour:
   Duration: 0
   _cost: 1
   MapBases: []
+--- !u!114 &6134521876876103079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6134521876876103075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &6134521876876103084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9382,11 +9457,11 @@ GameObject:
   - component: {fileID: 6134521876948999724}
   - component: {fileID: 6134521876948999716}
   - component: {fileID: 6134521876948999718}
+  - component: {fileID: 118295284}
   - component: {fileID: 6134521876948999721}
   - component: {fileID: 6134521876948999720}
   - component: {fileID: 6134521876948999717}
   - component: {fileID: 6134521876948999722}
-  - component: {fileID: 118295284}
   m_Layer: 0
   m_Name: BlueSoldier
   m_TagString: Untagged
@@ -9481,7 +9556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Duration: 0
-  _cost: -100
+  _cost: 1
 --- !u!114 &6134521876948999721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9882,9 +9957,9 @@ GameObject:
   - component: {fileID: 6134521877191137511}
   - component: {fileID: 6134521877191137510}
   - component: {fileID: 6134521877191137509}
-  - component: {fileID: 6134521877191137534}
-  - component: {fileID: 6134521877191137535}
   - component: {fileID: 2049154515}
+  - component: {fileID: 6134521877191137535}
+  - component: {fileID: 6134521877191137534}
   - component: {fileID: 6134521877191137536}
   m_Layer: 0
   m_Name: BlueSoldier (11)
@@ -10124,9 +10199,10 @@ GameObject:
   - component: {fileID: 6134521877197847882}
   - component: {fileID: 6134521877197847881}
   - component: {fileID: 6134521877197847880}
+  - component: {fileID: 1645957699}
+  - component: {fileID: 6134521877197847905}
   - component: {fileID: 6134521877197847873}
   - component: {fileID: 6134521877197847904}
-  - component: {fileID: 1645957699}
   m_Layer: 0
   m_Name: BlueSoldier (4)
   m_TagString: Untagged
@@ -10149,6 +10225,20 @@ MonoBehaviour:
   Duration: 0
   _cost: 1
   MapBases: []
+--- !u!114 &6134521877197847905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6134521877197847903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!1 &6134521877242617766
 GameObject:
   m_ObjectHideFlags: 0
@@ -10207,20 +10297,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11d7cc5f18ae41448ce7df1b1ed00931, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Duration: 0
-  _cost: 1
---- !u!114 &6134521877467597793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6134521877467597822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Duration: 0
@@ -10369,9 +10445,9 @@ GameObject:
   - component: {fileID: 6134521877467597801}
   - component: {fileID: 6134521877467597800}
   - component: {fileID: 6134521877467597799}
-  - component: {fileID: 6134521877467597792}
-  - component: {fileID: 6134521877467597793}
   - component: {fileID: 1942210249}
+  - component: {fileID: 6134521877467597825}
+  - component: {fileID: 6134521877467597792}
   - component: {fileID: 6134521877467597824}
   m_Layer: 0
   m_Name: BlueSoldier (12)
@@ -10410,6 +10486,20 @@ MonoBehaviour:
   Duration: 0
   _cost: 1
   MapBases: []
+--- !u!114 &6134521877467597825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6134521877467597822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!1 &6134521877583025171
 GameObject:
   m_ObjectHideFlags: 0
@@ -10635,8 +10725,9 @@ GameObject:
   - component: {fileID: 6134521877642539991}
   - component: {fileID: 6134521877642539990}
   - component: {fileID: 6134521877642539989}
-  - component: {fileID: 6134521877642540014}
   - component: {fileID: 1677624062}
+  - component: {fileID: 6134521877642540015}
+  - component: {fileID: 6134521877642540014}
   m_Layer: 0
   m_Name: BlueSoldier (2)
   m_TagString: Untagged
@@ -10674,6 +10765,20 @@ MonoBehaviour:
   Duration: 0
   _cost: 1
   MapBases: []
+--- !u!114 &6134521877642540015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6134521877642540012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!1 &6134521877711210055
 GameObject:
   m_ObjectHideFlags: 0
@@ -10802,8 +10907,9 @@ GameObject:
   - component: {fileID: 6134521877772663020}
   - component: {fileID: 6134521877772663019}
   - component: {fileID: 6134521877772663018}
-  - component: {fileID: 6134521877772663011}
   - component: {fileID: 922238434}
+  - component: {fileID: 6134521877772663013}
+  - component: {fileID: 6134521877772663011}
   - component: {fileID: 6134521877772663012}
   m_Layer: 0
   m_Name: BlueSoldier (6)
@@ -10856,6 +10962,20 @@ MonoBehaviour:
   Duration: 0
   _cost: 1
   MapBases: []
+--- !u!114 &6134521877772663013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6134521877772663009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &6134521877772663018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11130,8 +11250,9 @@ GameObject:
   - component: {fileID: 6134521878008369567}
   - component: {fileID: 6134521878008369566}
   - component: {fileID: 6134521878008369565}
-  - component: {fileID: 6134521878008369558}
   - component: {fileID: 31252814}
+  - component: {fileID: 6134521878008369559}
+  - component: {fileID: 6134521878008369558}
   m_Layer: 0
   m_Name: BlueSoldier (1)
   m_TagString: Untagged
@@ -11169,6 +11290,20 @@ MonoBehaviour:
   Duration: 0
   _cost: 1
   MapBases: []
+--- !u!114 &6134521878008369559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6134521878008369556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &6134521878008369565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11523,9 +11658,9 @@ GameObject:
   - component: {fileID: 6134521878197296675}
   - component: {fileID: 6134521878197296674}
   - component: {fileID: 6134521878197296673}
-  - component: {fileID: 6134521878197296698}
-  - component: {fileID: 6134521878197296699}
   - component: {fileID: 461364397}
+  - component: {fileID: 6134521878197296699}
+  - component: {fileID: 6134521878197296698}
   - component: {fileID: 6134521878197296700}
   m_Layer: 0
   m_Name: BlueSoldier (13)
@@ -11720,8 +11855,9 @@ GameObject:
   - component: {fileID: 6134521878220710860}
   - component: {fileID: 6134521878220710859}
   - component: {fileID: 6134521878220710858}
-  - component: {fileID: 6134521878220710851}
   - component: {fileID: 1550063544}
+  - component: {fileID: 6134521878220710852}
+  - component: {fileID: 6134521878220710851}
   m_Layer: 0
   m_Name: BlueSoldier (3)
   m_TagString: Untagged
@@ -11759,6 +11895,20 @@ MonoBehaviour:
   Duration: 0
   _cost: 1
   MapBases: []
+--- !u!114 &6134521878220710852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6134521878220710849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!114 &6134521878220710858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11951,20 +12101,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Duration: 0
   _cost: 1
---- !u!114 &6134521878365579297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6134521878365579326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Duration: 0
-  _cost: 1
 --- !u!114 &6134521878365579303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12109,9 +12245,9 @@ GameObject:
   - component: {fileID: 6134521878365579305}
   - component: {fileID: 6134521878365579304}
   - component: {fileID: 6134521878365579303}
-  - component: {fileID: 6134521878365579296}
-  - component: {fileID: 6134521878365579297}
   - component: {fileID: 627074782}
+  - component: {fileID: 6134521878365579329}
+  - component: {fileID: 6134521878365579296}
   - component: {fileID: 6134521878365579328}
   m_Layer: 0
   m_Name: BlueSoldier (14)
@@ -12150,6 +12286,20 @@ MonoBehaviour:
   Duration: 0
   _cost: 1
   MapBases: []
+--- !u!114 &6134521878365579329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6134521878365579326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb92ffdba44c4da0a986ffd49562c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
 --- !u!1 &6134521878393618006
 GameObject:
   m_ObjectHideFlags: 0

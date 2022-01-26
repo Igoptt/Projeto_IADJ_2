@@ -7,7 +7,6 @@ using Assets.General_Scripts;
 using Assets.TeamBlue;
 using Assets.TeamBlue.GoalOrientedBehaviour.Scripts.AI.GOAP;
 using Assets.TeamBlue.GoalOrientedBehaviour.Scripts.GameData;
-using Assets.TeamRed.GoalOrientedBehaviour.Scripts.GameData.Soldiers;
 using UnityEngine;
 
 
@@ -60,10 +59,13 @@ namespace TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Actions
                     {
                         return false;
                     }
-                    Target = mono.gameObject;
-                    AttTarget = Target;
-                    // return true;
-                    return Vector3.Distance(_me.MyTransform.position, _target.MyTransform.position) < 1.5f * 2;
+                    else
+                    {
+                        Target = mono.gameObject;
+                        AttTarget = Target;
+                        // return true;
+                        return Vector3.Distance(_me.MyTransform.position, _target.MyTransform.position) < 1.5f * 2; 
+                    }
                 }
             }
             

@@ -67,8 +67,9 @@ namespace Assets.TeamBlue
         {
             var goal ="";
             var attackCost = -5000f;
-            if (EnemyClose(soldier))
+            if (EnemyClose(soldier) && !soldier.HasFlag)
             {
+                // soldier.GetComponent<GoapAgent>().AbortPlan();
                 soldier.GetComponent<AttackNearestEnemyAction>().Cost = attackCost;
                 return goal = "attackNearestEnemy";
             }
