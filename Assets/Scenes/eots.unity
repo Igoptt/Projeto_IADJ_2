@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 370315825}
-  m_IndirectSpecularColor: {r: 0.19592407, g: 0.09793534, b: 0.12011028, a: 1}
+  m_IndirectSpecularColor: {r: 0.19588247, g: 0.098007776, b: 0.120039396, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9281,6 +9281,7 @@ GameObject:
   - component: {fileID: 1827287702}
   - component: {fileID: 1827287704}
   - component: {fileID: 1827287701}
+  - component: {fileID: 1827287705}
   m_Layer: 0
   m_Name: BlueSoldier
   m_TagString: Untagged
@@ -9376,6 +9377,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Duration: 0
   _cost: 1
+--- !u!114 &1827287705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827287698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 044a33ebce5d7cb42b8a0a6e80143904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  _cost: 1
+  AttTarget: {fileID: 0}
+  Range: 1
 --- !u!114 &1827287708
 MonoBehaviour:
   m_ObjectHideFlags: 0
