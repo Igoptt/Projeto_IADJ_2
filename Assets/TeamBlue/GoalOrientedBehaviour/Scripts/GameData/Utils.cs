@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Assets.General_Scripts;
 using UnityEngine;
 
 namespace Assets.TeamBlue.GoalOrientedBehaviour.Scripts.GameData
@@ -21,5 +22,6 @@ namespace Assets.TeamBlue.GoalOrientedBehaviour.Scripts.GameData
 
             return closest != default(T);
         }
+        
     }
 }

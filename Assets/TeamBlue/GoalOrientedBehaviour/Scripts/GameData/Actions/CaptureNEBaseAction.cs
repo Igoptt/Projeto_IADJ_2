@@ -18,7 +18,8 @@ public class CaptureNEBaseAction : GoapAction
     private void Awake()
     {
         _soldier = GetComponent<Soldier>();
-        AddEffect("captureNEBase", true);
+        // AddEffect("captureNEBase", true);
+        AddEffect("captureBaseAction", true);
 
     }
 

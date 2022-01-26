@@ -78,7 +78,7 @@
      <Compile Include="Assets\EOTS\GameManager.cs" />
      <Compile Include="Assets\Scripts\HSM\Concretes\Actions\HideEntryAction.cs" />
      <Compile Include="Assets\Scripts\HSM\Abstracts\IUpdateResult.cs" />
-     <Compile Include="Assets\TeamBlue\GoalOrientedBehaviour\Scripts\GameData\Actions\AttackPlayerAction.cs" />
+     <Compile Include="Assets\TeamBlue\GoalOrientedBehaviour\Scripts\GameData\Actions\AttackPlayersInEnemyBaseAction.cs" />
      <Compile Include="Assets\TeamBlue\GoalOrientedBehaviour\Scripts\GameData\Soldiers\Soldier.cs" />
      <Compile Include="Assets\Scripts\SteeringBehaviours\Basics\Arrive.cs" />
      <Compile Include="Assets\Scripts\SteeringBehaviours\Advanced\WanderTarget.cs" />
@@ -90,8 +90,10 @@
      <Compile Include="Assets\Scripts\HSM\Abstracts\IState.cs" />
      <Compile Include="Assets\TeamRed\Pathfinding\Scripts\AStar\PathRequestManager.cs" />
      <Compile Include="Assets\TeamRed\GoalOrientedBehaviour\Scripts\AI\GOAP\HSM\Conditions\NeedToMoveCondition.cs" />
+     <Compile Include="Assets\TeamRed\EnemyTeamManger.cs" />
      <Compile Include="Assets\TeamRed\GoalOrientedBehaviour\Scripts\AI\GOAP\HSM\Conditions\ReadyToPerformActionCondition.cs" />
      <Compile Include="Assets\TeamBlue\GoalOrientedBehaviour\Scripts\GameData\Actions\CaptureClosestBaseAction.cs" />
+     <Compile Include="Assets\TeamRed\GoalOrientedBehaviour\Scripts\GameData\Actions\CaptureClosestBaseAction.cs" />
      <Compile Include="Assets\TeamBlue\GoalOrientedBehaviour\Scripts\AI\GOAP\HSM\Actions\PlanAction.cs" />
      <Compile Include="Assets\TeamBlue\Pathfinding\Scripts\AStar\IListener.cs" />
      <Compile Include="Assets\TeamBlue\GoalOrientedBehaviour\Scripts\AI\GOAP\HSM\Conditions\NeedNewPlanCondition.cs" />
@@ -115,6 +117,7 @@
      <Compile Include="Assets\TeamBlue\GoalOrientedBehaviour\Scripts\GameData\Actions\PickUpFlag.cs" />
      <Compile Include="Assets\Scripts\SteeringBehaviours\Basics\SteeringBasics.cs" />
      <Compile Include="Assets\General Scripts\IHeapItem.cs" />
+     <Compile Include="Assets\TeamRed\GoalOrientedBehaviour\Scripts\GameData\Actions\PickUpFlag.cs" />
      <Compile Include="Assets\TeamRed\Pathfinding\Scripts\AStar\ISubscriber.cs" />
      <Compile Include="Assets\Scripts\HSM\Concretes\HierarchicalStateMachine.cs" />
      <Compile Include="Assets\TeamBlue\Pathfinding\Scripts\AStar\Line.cs" />
@@ -128,6 +131,7 @@
      <Compile Include="Assets\TeamBlue\GoalOrientedBehaviour\Scripts\GameData\Actions\DropFlag.cs" />
      <Compile Include="Assets\TeamRed\Pathfinding\Scripts\AStar\IListener.cs" />
      <Compile Include="Assets\General Scripts\ISoldier.cs" />
+     <Compile Include="Assets\TeamRed\GoalOrientedBehaviour\Scripts\GameData\Actions\DropFlag.cs" />
      <Compile Include="Assets\TeamRed\Pathfinding\PathfindingUnit.cs" />
      <Compile Include="Assets\Scripts\HSM\Concretes\Actions\EvadeActiveAction.cs" />
      <Compile Include="Assets\Scripts\HSM\Concretes\Actions\FlockExitAction.cs" />
@@ -171,10 +175,7 @@
      <Compile Include="Assets\TeamRed\GoalOrientedBehaviour\Scripts\AI\GOAP\HSM\Actions\PerformActionAction.cs" />
      <Compile Include="Assets\Scripts\HSM\Concretes\Actions\EvadeExitActions.cs" />
      <Compile Include="Assets\TeamRed\GoalOrientedBehaviour\Scripts\GameData\MyRandom.cs" />
-     <Compile Include="Assets\TeamRed\GoalOrientedBehaviour\Scripts\GameData\Actions\DropFlag.cs" />
-     <Compile Include="Assets\TeamRed\GoalOrientedBehaviour\Scripts\GameData\Actions\PickUpFlag.cs" />
-     <Compile Include="Assets\TeamRed\EnemyTeamManger.cs" />
-     <Compile Include="Assets\TeamRed\GoalOrientedBehaviour\Scripts\GameData\Actions\CaptureClosestBaseAction.cs" />
+     <Compile Include="Assets\TeamBlue\GoalOrientedBehaviour\Scripts\GameData\Actions\AttackNearestEnemyAction.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

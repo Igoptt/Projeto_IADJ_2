@@ -20,6 +20,7 @@ namespace TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Actions
         private Soldier _soldier;
         private void Awake()
         {
+            
             AddPrecondition("hasFlag", false); // we cannot have the flag to pick up the flag
             AddEffect("hasFlag", true); // we will have the flag after we picked it up
 
@@ -67,9 +68,14 @@ namespace TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Actions
         {
             // the flag will "be worked" if there is some1 carrying it. Otherwise it is free to be picked up.
             if (_soldier.Invulnerable == false && _flag.BeingCarried == false && _flag.CanBeCarried)
+            {
                 Target = _flag.gameObject;
+                return true;
+            }
 
-            return _flag.BeingCarried == false;
+            return false;
+
+            // return _flag.BeingCarried == false;
         }
 
         /// <summary>

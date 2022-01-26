@@ -16,42 +16,66 @@ namespace Assets.TeamBlue
 {
     public class TeamManager : MonoBehaviour
     {
-        public List<Soldier> MyArmy;
-        public List<Base> MapBases;
-        public FlagComponent Flag;
-        public Teams MyTeam;
-        public Teams OtherTeam;
+        //wops nao estava a seguir as convençoes de nomes serem com letra minuscula
+        public List<Soldier> myArmy;
+        public List<Base> mapBases;
+        public FlagComponent flag;
+        public Teams myTeam;
+        public Teams otherTeam;
 
-        private List<ISoldier> EnemyArmy;
+        public List<ISoldier> _enemyArmy;
 
         private ISoldier _closestEnemy;
 
         private void Awake()
         {
-            Flag = FindObjectOfType<FlagComponent>();
-            MyArmy = FindObjectsOfType<Soldier>().ToList();
-            MapBases = FindObjectsOfType<Base>().ToList();
+            flag = FindObjectOfType<FlagComponent>();
+            myArmy = FindObjectsOfType<Soldier>().ToList();
+            mapBases = FindObjectsOfType<Base>().ToList();
             
             //if my team = redTeam then otherTeam = Blue Team else contrario
-            OtherTeam = MyTeam == Teams.RedTeam ? Teams.BlueTeam : Teams.RedTeam;
+            otherTeam = myTeam == Teams.RedTeam ? Teams.BlueTeam : Teams.RedTeam;
 
             //vai buscar todos os objetos do tipo MonoBehaviour (ou subclasses dele) para ter todos os scripts 
             //depois procura dos acima os que implementam a classe ISoldier cuja team seja a OtherTeam
             //source: https://answers.unity.com/questions/863509/how-can-i-find-all-objects-that-have-a-script-that.html
-            EnemyArmy = FindObjectsOfType<MonoBehaviour>().OfType<ISoldier>().Where(s => s.MyTeam == OtherTeam).ToList();
+            _enemyArmy = FindObjectsOfType<MonoBehaviour>().OfType<ISoldier>().Where(s => s.MyTeam == otherTeam).ToList();
         }
+
         
-        
-        
+        private void Start()
+        {
+            StartCoroutine(PeriodicPlanReset());
+        }
+
+        //TODO fazer uma funçao para verificar se tem mais que um inimigo por perto (basta ver as proximas posiçoes do GetClosest)
+        public bool EnemyClose(Soldier soldier)
+        {
+            //vai buscar o inimigo mais proximo
+            if(Utils.GetClosest(_enemyArmy.Select(s => s.MyTransform.GetComponent<MonoBehaviour>()), soldier.MyTransform, out var mono));
+            {
+                //atraves do MonoBehaviour do inimigo mais proximo vamos buscar o seu ISoldier
+                _closestEnemy = mono.gameObject.GetComponent<ISoldier>();
+            
+                //verifica se o inimigo mais proximo esta a pelo menos 5x o range do attack (o range é 1.5f entao 5x é relativamente perto)
+                return Vector3.Distance(soldier.MyTransform.position, _closestEnemy.MyTransform.position) < 1.5f * 2; 
+            }
+        }
         
         //TODO meter o soldado a atacar/guard tambem se tiver 1 ou mais inimigos por perto
         public string GetGoal(Soldier soldier)
         {
             var goal ="";
-            // var closestEnemy = Utils.GetClosest(EnemyArmy, soldier.MyTransform, out _closestEnemy);
-            
-            
+            var attackCost = -5000f;
+            if (EnemyClose(soldier))
+            {
+                soldier.GetComponent<AttackNearestEnemyAction>().Cost = attackCost;
+                return goal = "attackNearestEnemy";
+            }
+
+            soldier.GetComponent<AttackNearestEnemyAction>().Cost = 1f;
             goal = soldier.HasFlag ? "scored" : "captureBaseAction";
+
             
 
             // foreach (var bases in MapBases)
@@ -81,31 +105,29 @@ namespace Assets.TeamBlue
             return goal;
         }
 
-        //TODO meter um abort plan da equipa toda a cada tipo 5Segundos ou algo do genero
+        //TODO dar double check se o reset dos planos esta a funcionar corretamente
         private IEnumerator PeriodicPlanReset()
         {
             while (true)
             {
                 StartCoroutine(ResetTeamPlans());
 
-                yield return new WaitForSeconds(5f);
+                yield return new WaitForSeconds(0.5f);
             }
         }
         
         public IEnumerator ResetTeamPlans()
         {
-            foreach (var soldier in MyArmy)
+            foreach (var soldier in myArmy)
             {
-                ResetPlan(soldier.GetComponent<GoapAgent>());
+                // ResetPlan(soldier.GetComponent<GoapAgent>());
+                soldier.GetComponent<GoapAgent>().AbortPlan();
             }
 
             yield return null;
         }
         
-        private void Start()
-        {
-            StartCoroutine(PeriodicPlanReset());
-        }
+        
 
         public void ResetPlan(GoapAgent agent)
         {
@@ -117,7 +139,7 @@ namespace Assets.TeamBlue
             var i = 0;
             if (ourTeam == Teams.BlueTeam)
             {
-                foreach (var @base in MapBases)
+                foreach (var @base in mapBases)
                 {
                     if (IsBaseOurs(@base) && (@base.name == "NW" || @base.name == "NE"))
                     {
@@ -127,7 +149,7 @@ namespace Assets.TeamBlue
             }
             else
             {
-                foreach (var @base in MapBases)
+                foreach (var @base in mapBases)
                 {
                     if (IsBaseOurs(@base) && (@base.name == "SE" || @base.name == "SW"))
                     {
@@ -143,7 +165,7 @@ namespace Assets.TeamBlue
         
         public bool IsBaseOurs(Base baseToCheck)
         {
-            return baseToCheck.MyTeam != OtherTeam;
+            return baseToCheck.MyTeam != otherTeam;
         }
     }
 }

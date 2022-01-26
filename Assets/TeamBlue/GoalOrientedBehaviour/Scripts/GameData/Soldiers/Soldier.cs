@@ -101,6 +101,12 @@ namespace TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Soldiers
             return _soldierGoal;
         }
 
+        public void SetGoal()
+        {
+            _soldierGoal.Clear();
+            _soldierGoal.Add(new KeyValuePair<string, object>(_teamManager.GetGoal(this),true));
+        }
+        
         /// <summary>
         /// Plan failed. Add cleanup code if necessary
         /// </summary>
@@ -127,12 +133,7 @@ namespace TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Soldiers
         /// <summary>
         /// Função que vai dar o valor á variavel global do goal (depois no goalState so da return da variavel)
         /// </summary>
-        public void SetGoal()
-        {
-            _soldierGoal.Clear();
-            _soldierGoal.Add(new KeyValuePair<string, object>(_teamManager.GetGoal(this),true));
-            // _soldierGoal.Add(new KeyValuePair<string, object>("scored",true));
-        }
+        
 
         /// <summary>
         /// Everything is done, we completed our actions for this gool. Hooray! Add code if necessary

@@ -17,7 +17,8 @@ public class CaptureSWBaseAction : GoapAction
     private void Awake()
     {
         _soldier = GetComponent<Soldier>();
-        AddEffect("captureSWBase", true);
+        // AddEffect("captureSWBase", true);
+        AddEffect("captureBaseAction", true);
 
     }
 

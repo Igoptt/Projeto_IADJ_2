@@ -46,7 +46,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
   m_TopViewHeight: 30
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 66
+  controlID: 68
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -396,9 +396,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: b0400000
-      m_LastClickedID: 16560
-      m_ExpandedIDs: 8aefffff70fbffffd040000020410000
+      m_SelectedIDs: d8f7ffff
+      m_LastClickedID: -2088
+      m_ExpandedIDs: 68f9ffffc8f9ffffe6f9ffff9afaffff36fbffff42fbffff44fbfffff2400000284100004e410000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -458,9 +458,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 13.183825, y: 1.2880058, z: 1.5626993}
+    m_Target: {x: -8.381071, y: 1.9497232, z: -2.7456832}
     speed: 2
-    m_Value: {x: 13.183825, y: 1.2880058, z: 1.5626993}
+    m_Value: {x: -8.381071, y: 1.9497232, z: -2.7456832}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -511,9 +511,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0.018974748, y: 0.7792172, z: -0.6260215, w: 0.023618184}
   m_Size:
-    m_Target: 23.555159
+    m_Target: 22.625057
     speed: 2
-    m_Value: 23.555159
+    m_Value: 22.625057
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -601,22 +601,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/TeamBlue
+    - Assets/TeamBlue/GoalOrientedBehaviour/Scripts/GameData/Actions
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/TeamBlue
+  - Assets/TeamBlue/GoalOrientedBehaviour/Scripts/GameData/Actions
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\Users\Rodrigo\Desktop\Unity\Final Project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 406}
-    m_SelectedIDs: 66440000
-    m_LastClickedID: 17510
-    m_ExpandedIDs: 00000000584400005a4400005c4400005e44000060440000624400006444000066440000684400006a4400006c4400006e44000070440000724400007444000076440000784400007c440000a244000000ca9a3b
+    scrollPos: {x: 0, y: 510}
+    m_SelectedIDs: 86460000
+    m_LastClickedID: 18054
+    m_ExpandedIDs: 0000000040460000424600004446000046460000484600004a4600004c4600004e46000050460000524600005446000056460000584600005a4600005c4600005e4600006046000062460000664600009246000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -644,7 +644,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000584400005a4400005c4400005e44000060440000624400006444000066440000684400006a4400006c4400006e4400007044000072440000744400007644000078440000
+    m_ExpandedIDs: 0000000040460000424600004446000046460000484600004a4600004c4600004e46000050460000524600005446000056460000584600005a4600005c4600005e4600006046000062460000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -732,7 +732,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 897
   m_GlobalObjectId: 
   m_LockTracker:
     m_IsLocked: 0
