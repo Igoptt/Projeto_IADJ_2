@@ -64,7 +64,8 @@ namespace TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Actions
                         Target = mono.gameObject;
                         AttTarget = Target;
                         // return true;
-                        return Vector3.Distance(_me.MyTransform.position, _target.MyTransform.position) < 1.5f * 2; 
+                        print("PREPARING ATTACK");
+                        return Vector3.Distance(_me.MyTransform.position, _target.MyTransform.position) <= 1.5f * 2; 
                     }
                 }
             }

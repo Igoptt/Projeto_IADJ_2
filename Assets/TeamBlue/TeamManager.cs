@@ -25,17 +25,17 @@ namespace Assets.TeamBlue
 
         public List<ISoldier> _enemyArmy;
 
-        private ISoldier _closestEnemy;
+        // private ISoldier _closestEnemy;
 
         private void Awake()
         {
             flag = FindObjectOfType<FlagComponent>();
             myArmy = FindObjectsOfType<Soldier>().ToList();
             mapBases = FindObjectsOfType<Base>().ToList();
-            
+            myTeam = Teams.BlueTeam;
             //if my team = redTeam then otherTeam = Blue Team else contrario
             otherTeam = myTeam == Teams.RedTeam ? Teams.BlueTeam : Teams.RedTeam;
-
+            
             //vai buscar todos os objetos do tipo MonoBehaviour (ou subclasses dele) para ter todos os scripts 
             //depois procura dos acima os que implementam a classe ISoldier cuja team seja a OtherTeam
             //source: https://answers.unity.com/questions/863509/how-can-i-find-all-objects-that-have-a-script-that.html
@@ -49,25 +49,14 @@ namespace Assets.TeamBlue
         }
 
         //TODO fazer uma funçao para verificar se tem mais que um inimigo por perto (basta ver as proximas posiçoes do GetClosest)
-        public bool EnemyClose(Soldier soldier)
-        {
-            //vai buscar o inimigo mais proximo
-            if(Utils.GetClosest(_enemyArmy.Select(s => s.MyTransform.GetComponent<MonoBehaviour>()), soldier.MyTransform, out var mono));
-            {
-                //atraves do MonoBehaviour do inimigo mais proximo vamos buscar o seu ISoldier
-                _closestEnemy = mono.gameObject.GetComponent<ISoldier>();
-            
-                //verifica se o inimigo mais proximo esta a pelo menos 5x o range do attack (o range é 1.5f entao 5x é relativamente perto)
-                return Vector3.Distance(soldier.MyTransform.position, _closestEnemy.MyTransform.position) < 1.5f * 2; 
-            }
-        }
+        
         
         //TODO meter o soldado a atacar/guard tambem se tiver 1 ou mais inimigos por perto
         public string GetGoal(Soldier soldier)
         {
             var goal ="";
             var attackCost = -5000f;
-            if (EnemyClose(soldier) && !soldier.HasFlag)
+            if (Utils.EnemyClose(soldier, _enemyArmy) && !soldier.HasFlag)
             {
                 // soldier.GetComponent<GoapAgent>().AbortPlan();
                 soldier.GetComponent<AttackNearestEnemyAction>().Cost = attackCost;
@@ -121,8 +110,8 @@ namespace Assets.TeamBlue
         {
             foreach (var soldier in myArmy)
             {
-                // ResetPlan(soldier.GetComponent<GoapAgent>());
-                soldier.GetComponent<GoapAgent>().AbortPlan();
+                ResetPlan(soldier.GetComponent<GoapAgent>());
+                // soldier.GetComponent<GoapAgent>().AbortPlan();
             }
 
             yield return null;
@@ -133,6 +122,7 @@ namespace Assets.TeamBlue
         public void ResetPlan(GoapAgent agent)
         {
             agent.AbortPlan();
+            
         }
         
         public bool DoWeHaveOurBases(Teams ourTeam)

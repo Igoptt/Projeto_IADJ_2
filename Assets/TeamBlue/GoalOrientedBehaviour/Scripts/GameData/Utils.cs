@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Assets.General_Scripts;
+using TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Soldiers;
 using UnityEngine;
 
 namespace Assets.TeamBlue.GoalOrientedBehaviour.Scripts.GameData
@@ -21,6 +22,19 @@ namespace Assets.TeamBlue.GoalOrientedBehaviour.Scripts.GameData
                 .FirstOrDefault();
 
             return closest != default(T);
+        }
+        
+        public static bool EnemyClose(Soldier soldier, List<ISoldier> enemyArmy)
+        {
+            //vai buscar o inimigo mais proximo
+            if(GetClosest(enemyArmy.Select(s => s.MyTransform.GetComponent<MonoBehaviour>()), soldier.MyTransform, out var mono));
+            {
+                //atraves do MonoBehaviour do inimigo mais proximo vamos buscar o seu ISoldier
+                var closestEnemy = mono.gameObject.GetComponent<ISoldier>();
+            
+                //verifica se o inimigo mais proximo esta a pelo menos 5x o range do attack (o range é 1.5f entao 5x é relativamente perto)
+                return Vector3.Distance(soldier.MyTransform.position, closestEnemy.MyTransform.position) < 1.5f * 2; 
+            }
         }
         
     }

@@ -12,10 +12,6 @@ namespace Assets.TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Actions
     {
         private bool _ran;
         private bool _onCooldown;
-        
-
-        public GameObject AttTarget;
-        public float Range;
         private Soldier _soldier;
 
 
