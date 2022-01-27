@@ -148,6 +148,7 @@
      <Compile Include="Assets\Scripts\HSM\Abstracts\ICondition.cs" />
      <Compile Include="Assets\MovementPenalty.cs" />
      <Compile Include="Assets\TeamRed\Pathfinding\Scripts\AStar\AStar.cs" />
+     <Compile Include="Assets\TeamBlue\GoalOrientedBehaviour\Scripts\GameData\Actions\SprintAction.cs" />
      <Compile Include="Assets\Scripts\SteeringBehaviours\Advanced\Separation.cs" />
      <Compile Include="Assets\TeamRed\Pathfinding\Scripts\AStar\Path.cs" />
      <Compile Include="Assets\Scripts\SteeringBehaviours\Advanced\Cohesion.cs" />
@@ -176,7 +177,8 @@
      <Compile Include="Assets\TeamRed\GoalOrientedBehaviour\Scripts\AI\GOAP\HSM\Actions\PerformActionAction.cs" />
      <Compile Include="Assets\Scripts\HSM\Concretes\Actions\EvadeExitActions.cs" />
      <Compile Include="Assets\TeamRed\GoalOrientedBehaviour\Scripts\GameData\MyRandom.cs" />
-     <Compile Include="Assets\TeamBlue\GoalOrientedBehaviour\Scripts\GameData\Actions\SprintAction.cs" />
+     <Compile Include="Assets\TeamBlue\GoalOrientedBehaviour\Scripts\GameData\Soldiers\BaseGuards.cs" />
+     <Compile Include="Assets\TeamBlue\GoalOrientedBehaviour\Scripts\GameData\Soldiers\FlagSquad.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

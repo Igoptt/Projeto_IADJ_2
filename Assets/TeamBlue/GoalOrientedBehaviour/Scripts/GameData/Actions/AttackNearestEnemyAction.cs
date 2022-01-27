@@ -21,7 +21,7 @@ namespace TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Actions
         private TeamManager _teamManager;
 
         public GameObject AttTarget;
-        public float Range = 1.5f;
+        public float Range = 2.5f;
 
 
         private void Awake()
@@ -50,27 +50,35 @@ namespace TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Actions
         public override bool CheckProceduralPrecondition(GameObject agent)
         {
             
-            if (_onCooldown == false)
-            {
-                if(Utils.GetClosest(_teamManager._enemyArmy.Select(s => s.MyTransform.GetComponent<MonoBehaviour>()), _me.MyTransform, out var mono))
-                {
-                    _target = mono.gameObject.GetComponent<ISoldier>();
-                    if (_target.Invulnerable || _target.MyTransform.position == FindObjectsOfType<Respawner>().First(sp => sp.MyTeam == _target.MyTeam).transform.position )
-                    {
-                        return false;
-                    }
-                    else
-                    {
-                        Target = mono.gameObject;
-                        AttTarget = Target;
-                        // return true;
-                        print("PREPARING ATTACK");
-                        return Vector3.Distance(_me.MyTransform.position, _target.MyTransform.position) <= 1.5f * 2; 
-                    }
-                }
-            }
+            if (_onCooldown || _me.Invulnerable) return false;
             
-            // return _onCooldown == false && Utils.GetClosest(FindObjectsOfType<Soldier>().ToList(), transform, out _target);
+            if(Utils.GetClosest(_teamManager._enemyArmy.Select(s => s.MyTransform.GetComponent<MonoBehaviour>()), _me.MyTransform, out var mono))
+            {
+                _target = mono.gameObject.GetComponent<ISoldier>();
+                if (_target.Invulnerable)
+                {
+                    return false;
+                }
+
+                if (_target.MyTransform.position == FindObjectsOfType<Respawner>()
+                    .First(sp => sp.MyTeam == _target.MyTeam).transform.position)
+                {
+                    AttTarget = null;
+                    return false;
+                }
+
+                
+                if (Vector3.Distance(_me.MyTransform.position, _target.MyTransform.position) <= Range * 4)
+                {
+                    Target = mono.gameObject;
+                    AttTarget = Target;
+                    print("PREPARING ATTACK");
+                    return true;
+                }
+                AttTarget = null;
+                return false; 
+                
+            }
             return false;
         }
          
@@ -99,6 +107,11 @@ namespace TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Actions
             _onCooldown = true;
             yield return new WaitForSeconds(15f);
             _onCooldown = false;
+        }
+
+        public bool OnCooldown()
+        {
+            return _onCooldown;
         }
 
     }

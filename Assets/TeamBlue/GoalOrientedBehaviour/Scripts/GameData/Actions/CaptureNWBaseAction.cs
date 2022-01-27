@@ -17,6 +17,7 @@ public class CaptureNWBaseAction : GoapAction
     private void Awake()
     {
         _soldier = GetComponent<Soldier>();
+        MapBases = FindObjectsOfType<Base>().ToList();
         AddEffect("captureBaseAction", true);
         // AddEffect("captureNWBase", true);
 
@@ -34,17 +35,14 @@ public class CaptureNWBaseAction : GoapAction
 
     public override bool CheckProceduralPrecondition(GameObject agent)
     {
-        MapBases = new List<Base>();
-        var allBases = FindObjectsOfType<Base>().ToList();
-            
-        foreach (var bases in allBases)
+        if (_soldier.Invulnerable) return false;
+        
+        foreach (var bases in MapBases)
         {
             if (bases.name == "NW")
             {
                 _captureBase = bases;
             }
-                
-            MapBases.Add(bases);
         }
             
         Target = _captureBase.gameObject;
@@ -56,6 +54,7 @@ public class CaptureNWBaseAction : GoapAction
     {
         //para quando captura for now
         _soldier.MyTransform.GetComponent<SteeringBasics>().Stop();
+        print("NW Capturing");
         return true;
     }
 

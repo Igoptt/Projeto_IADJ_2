@@ -6,6 +6,7 @@ using Assets.EOTS;
 using Assets.General_Scripts;
 using Assets.TeamBlue.GoalOrientedBehaviour.Scripts.AI.GOAP;
 using Assets.TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Actions;
+using Assets.TeamBlue.Pathfinding;
 using TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Actions;
 using TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Soldiers;
 using UnityEngine;
@@ -22,7 +23,8 @@ namespace Assets.TeamBlue
         public FlagComponent flag;
         public Teams myTeam;
         public Teams otherTeam;
-
+        private float priorityCost = -5000f;
+        private float normalCost = 1f;
         public List<ISoldier> _enemyArmy;
 
         // private ISoldier _closestEnemy;
@@ -46,67 +48,158 @@ namespace Assets.TeamBlue
         private void Start()
         {
             StartCoroutine(PeriodicPlanReset());
+            // PeriodicPlanReset();
         }
 
-        //TODO fazer uma funçao para verificar se tem mais que um inimigo por perto (basta ver as proximas posiçoes do GetClosest)
-        
-        
-        //TODO meter o soldado a atacar/guard tambem se tiver 1 ou mais inimigos por perto
-        public string GetGoal(Soldier soldier)
+        public bool BaseClose(Soldier soldier)
         {
-            var goal ="";
-            var attackCost = -5000f;
-            if (Utils.EnemyClose(soldier, _enemyArmy) && !soldier.HasFlag)
+            //vai base da equipa mais proxima
+            if (Utils.GetClosest(FindObjectsOfType<Base>().Where(b => b.MyTeam == myTeam), soldier.MyTransform, out var mono)) ;
             {
-                // soldier.GetComponent<GoapAgent>().AbortPlan();
-                soldier.GetComponent<AttackNearestEnemyAction>().Cost = attackCost;
-                return goal = "attackNearestEnemy";
+                var _closestBase = mono.gameObject.GetComponent<Base>();
+                //verifica se a base mais proxima esta a pelo menos 5x o range do attack (o range é 1.5f entao 5x é relativamente perto)
+                return Vector3.Distance(soldier.MyTransform.position, _closestBase.gameObject.transform.position) < 1.5f * 5;
+            }
+        }
+
+        public bool FlagClose(Soldier soldier)
+        {
+            var _closestFlag = FindObjectOfType<FlagComponent>();
+            //verifica se a bandeira esta a pelo menos 5x o range do attack (o range é 1.5f entao 5x é relativamente perto)
+
+            if (_closestFlag.CanBeCarried == false) return false;
+            
+            return Vector3.Distance(soldier.MyTransform.position, _closestFlag.transform.position) <= 1.5f * 3;
+            
+        }
+        
+        public bool LotsOfEnemiesClose(Soldier soldier)
+        {
+            var i = 0;
+            foreach (ISoldier enemy in _enemyArmy)
+            {
+                if (Vector3.Distance(soldier.MyTransform.position, enemy.MyTransform.position) < 2.5f * 2)
+                {
+                    i++;
+                }
             }
 
-            soldier.GetComponent<AttackNearestEnemyAction>().Cost = 1f;
+            return i>=2;
+        }
+        
+        
+        
+        
+        
+        public string GetSoldierGoal(Soldier soldier)
+        {
+            var goal ="";
+            if(soldier.GetComponent<AttackNearestEnemyAction>().OnCooldown() == false && Utils.EnemyClose(soldier, _enemyArmy))
+            {
+                soldier.GetComponent<AttackNearestEnemyAction>().Cost = priorityCost;
+                soldier.GetComponent<GoapAgent>().AbortPlan();
+                return "attackNearestEnemy";
+            }
+            
+            if (soldier.GetComponent<SprintAction>().OnCooldown() == false)
+            {
+                soldier.GetComponent<SprintAction>().Cost = priorityCost;
+                soldier.GetComponent<GoapAgent>().AbortPlan();
+                return "ran";
+            }
+            
+            if (LotsOfEnemiesClose(soldier) && soldier.GetComponent<GuardAction>() == false)
+            {
+                soldier.GetComponent<GuardAction>().Cost = priorityCost;
+                soldier.GetComponent<GoapAgent>().AbortPlan();
+                return "Invulnerable";
+            }
+
+            soldier.GetComponent<GuardAction>().Cost = normalCost;
+            soldier.GetComponent<AttackNearestEnemyAction>().Cost = normalCost;
+            soldier.GetComponent<SprintAction>().Cost = normalCost;
+
             goal = soldier.HasFlag ? "scored" : "captureBaseAction";
-
-            
-
-            // foreach (var bases in MapBases)
-            // {
-            //     if (bases.name == "NE" && IsBaseOurs(bases))
-            //     {
-            //         goal = "hasFlag";
-            //     }
-            // }
-            // if (!DoWeHaveOurBases(MyTeam))
-            // {
-            //     goal = "captureBaseAction";
-            // }
-            // else
-            // {
-            //     // foreach (var soldiers in MyArmy)
-            //     // {
-            //     //     soldiers.GetComponent<PickUpFlag>().Cost = 1;
-            //     //     soldiers.GetComponent<ScoreFlag>().Cost = 1;
-            //     //     
-            //     // }
-            //     goal = "scored";
-            // }
-            
-                
             
             return goal;
         }
 
-        //TODO dar double check se o reset dos planos esta a funcionar corretamente
+
+        public string GetBaseGuardGoal(BaseGuards baseGuards)
+        {
+            var goal ="";
+            if(baseGuards.GetComponent<AttackNearestEnemyAction>().OnCooldown() == false && Utils.EnemyClose(baseGuards, _enemyArmy))
+            {
+                baseGuards.GetComponent<AttackNearestEnemyAction>().Cost = priorityCost;
+                baseGuards.GetComponent<GoapAgent>().AbortPlan();
+                return "attackNearestEnemy";
+            }
+            
+            if (baseGuards.GetComponent<SprintAction>().OnCooldown() == false)
+            {
+                baseGuards.GetComponent<SprintAction>().Cost = priorityCost;
+                baseGuards.GetComponent<GoapAgent>().AbortPlan();
+                return "ran";
+            }
+            if (LotsOfEnemiesClose(baseGuards) && baseGuards.GetComponent<GuardAction>() == false)
+            {
+                baseGuards.GetComponent<GuardAction>().Cost = priorityCost;
+                baseGuards.GetComponent<GoapAgent>().AbortPlan();
+                return "Invulnerable";
+            }
+            
+            baseGuards.GetComponent<AttackNearestEnemyAction>().Cost = normalCost;
+            baseGuards.GetComponent<SprintAction>().Cost = normalCost;
+            baseGuards.GetComponent<GuardAction>().Cost = normalCost;
+            
+            goal = FlagClose(baseGuards) ? "scored" : "captureBaseAction";
+            
+            return goal;
+        }
+        
+        public string GetFlagTeamGoal(FlagSquad flagSquad)
+        {
+            if(flagSquad.GetComponent<AttackNearestEnemyAction>().OnCooldown() == false && Utils.EnemyClose(flagSquad, _enemyArmy) && flagSquad.HasFlag == false)
+            {
+                flagSquad.GetComponent<AttackNearestEnemyAction>().Cost = priorityCost;
+                flagSquad.GetComponent<GoapAgent>().AbortPlan();
+                return "attackNearestEnemy";
+            }
+            
+            if (flagSquad.GetComponent<SprintAction>().OnCooldown() == false)
+            {
+                flagSquad.GetComponent<SprintAction>().Cost = priorityCost;
+                flagSquad.GetComponent<GoapAgent>().AbortPlan();
+                return "ran";
+            }
+            if (LotsOfEnemiesClose(flagSquad) && flagSquad.GetComponent<GuardAction>() == false)
+            {
+                flagSquad.GetComponent<GuardAction>().Cost = priorityCost;
+                flagSquad.GetComponent<GoapAgent>().AbortPlan();
+                return "Invulnerable";
+            }
+            
+            flagSquad.GetComponent<AttackNearestEnemyAction>().Cost = normalCost;
+            flagSquad.GetComponent<SprintAction>().Cost = normalCost;
+            flagSquad.GetComponent<GuardAction>().Cost = normalCost;
+            var goal = flagSquad.HasFlag ? "scored" : "hasFlag";
+            return goal;
+
+
+        }
+
+        
         private IEnumerator PeriodicPlanReset()
         {
             while (true)
             {
                 StartCoroutine(ResetTeamPlans());
-
-                yield return new WaitForSeconds(0.5f);
+        
+                yield return new WaitForSeconds(0.1f);
             }
         }
         
-        public IEnumerator ResetTeamPlans()
+        private IEnumerator ResetTeamPlans()
         {
             foreach (var soldier in myArmy)
             {
@@ -117,9 +210,7 @@ namespace Assets.TeamBlue
             yield return null;
         }
         
-        
-
-        public void ResetPlan(GoapAgent agent)
+        private void ResetPlan(GoapAgent agent)
         {
             agent.AbortPlan();
             

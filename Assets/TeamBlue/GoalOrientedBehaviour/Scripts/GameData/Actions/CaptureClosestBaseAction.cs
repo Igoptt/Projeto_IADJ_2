@@ -41,7 +41,14 @@ namespace TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Actions
             //verifica de que equipa é o soldado e compara com a equipa da base (se é da blue, red, ou nenhuma(neutra))
             //getClosest devolve true se estiver na lista e coloca na variavel out 
             //out -> guarda o resultado
+            
+            
+            
+            
+            if (_soldier.Invulnerable) return false;
+            
             print(_soldier.MyTeam);
+            
             if (Utils.GetClosest(FindObjectsOfType<Base>().
                     Where(b => _soldier.MyTeam == Teams.RedTeam && (b.MyTeam == Teams.BlueTeam || b.MyTeam == Teams.Neutral) || 
                                _soldier.MyTeam == Teams.BlueTeam && (b.MyTeam == Teams.RedTeam || b.MyTeam == Teams.Neutral )), _soldier.MyTransform, out _captureBase))
@@ -61,6 +68,7 @@ namespace TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Actions
         {
             //para quando captura for now
             _soldier.MyTransform.GetComponent<SteeringBasics>().Stop();
+            print("Capturing Closest Base");
             return true;
         }
 

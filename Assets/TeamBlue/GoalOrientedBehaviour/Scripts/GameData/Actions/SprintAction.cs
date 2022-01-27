@@ -41,7 +41,7 @@ namespace Assets.TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Actions
 
         public override bool CheckProceduralPrecondition(GameObject agent)
         {
-            if (_onCooldown == false)
+            if (_onCooldown == false && _soldier.Invulnerable == false)
             {
                 return true;
             }
@@ -66,30 +66,10 @@ namespace Assets.TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Actions
             _onCooldown = false;
         }
 
-        public override bool Equals(object other)
+        public bool OnCooldown()
         {
-            return base.Equals(other);
+            return _onCooldown;
         }
-
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
-
-
-
-
-
-        // Use this for initialization
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
+        
     }
 }

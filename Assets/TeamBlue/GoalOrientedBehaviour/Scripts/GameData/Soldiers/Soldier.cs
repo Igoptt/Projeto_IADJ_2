@@ -19,8 +19,8 @@ namespace TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Soldiers
         public Transform MyTransform { get; set; }
         
         private PathfindingUnit _pathfinding;
-        private TeamManager _teamManager;
-        private HashSet<KeyValuePair<string, object>> _soldierGoal;
+        protected TeamManager _teamManager;
+        protected HashSet<KeyValuePair<string, object>> _soldierGoal;
         
         public Teams MyTeam
         {
@@ -104,7 +104,7 @@ namespace TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Soldiers
         public void SetGoal()
         {
             _soldierGoal.Clear();
-            _soldierGoal.Add(new KeyValuePair<string, object>(_teamManager.GetGoal(this),true));
+            _soldierGoal.Add(new KeyValuePair<string, object>(_teamManager.GetSoldierGoal(this),true));
         }
         
         /// <summary>
@@ -196,6 +196,8 @@ namespace TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Soldiers
 
             return false; // we are not there yet
         }
+
+        
 
         public void Died()
         {

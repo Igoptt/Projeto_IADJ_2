@@ -52,6 +52,8 @@ namespace Assets.TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Actions
 
         public override bool CheckProceduralPrecondition(GameObject agent)
         {
+            if (_soldier.Invulnerable) return false;
+            
             if (Utils.GetClosest(FindObjectsOfType<Base>().Where(b => b.MyTeam == _soldier.MyTeam), transform, out _droppingBase))
             // if (Utils.GetClosest(FindObjectsOfType<Base>(), transform, out _droppingBase) && _soldier.Invulnerable == false)
             {

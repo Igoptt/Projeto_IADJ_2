@@ -34,6 +34,7 @@ namespace TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Actions
         public override bool Perform(GameObject agent)
         {
             _soldier.Guard();
+            print("GUARD");
             StartCoroutine(StartCooldown());
             _invulnerable = true;
             return true;
@@ -49,6 +50,11 @@ namespace TeamBlue.GoalOrientedBehaviour.Scripts.GameData.Actions
             _onCooldown = true;
             yield return new WaitForSeconds(30f);
             _onCooldown = false;
+        }
+
+        public bool OnCooldown()
+        {
+            return _onCooldown;
         }
     }
 }
